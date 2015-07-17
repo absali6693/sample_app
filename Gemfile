@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'tlsmail'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
