@@ -68,11 +68,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.com',
-    :port           => '587',
-    :authentication => :plain,
+    :port           => 587,
+    :authentication => 'plain',
     :user_name      => 'absali6693@gmail.com',
     :password       => 'Abbas@6693',
-    :domain         => 'gmail.com',
+    :domain         => 'baci.lindsaar.net',
     :enable_starttls_auto => true
   }
 
