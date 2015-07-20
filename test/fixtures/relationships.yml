@@ -1,0 +1,15 @@
+one:
+  follower: abbas
+  followed: lana
+
+two:
+  follower: abbas
+  followed: mallory
+
+three:
+  follower: lana
+  followed: abbas
+
+four:
+  follower: archer
+  followed: abbas
