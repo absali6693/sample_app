@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
 
     def index
-    	    @users = User.paginate(page: params[:page])
+    	@users = User.paginate(page: params[:page])
 
   end
 
@@ -34,12 +34,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
-  end
-
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
@@ -48,6 +42,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
   def following
