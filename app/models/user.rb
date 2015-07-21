@@ -25,7 +25,7 @@ mount_uploader :profilepic, ProfilepicUploader
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  
+  validate  :picture_size
   
    def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -120,5 +120,12 @@ mount_uploader :profilepic, ProfilepicUploader
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
+    def picture_size
+      if profilepic.size > 5.megabytes
+        errors.add(:profilepic, "should be less than 5MB")
+      end
+    end
+
    
 end

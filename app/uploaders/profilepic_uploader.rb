@@ -1,10 +1,16 @@
 # encoding: utf-8
 
 class ProfilepicUploader < CarrierWave::Uploader::Base
+ include CarrierWave::MiniMagick
+  process resize_to_limit: [400, 400]
+
+    
+    storage :fog
+  
+
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -47,5 +53,7 @@ class ProfilepicUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 end
