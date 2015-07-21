@@ -1,5 +1,10 @@
 <li>
-  <%= gravatar_for user, size: 50 %>
+ <!-- <%= gravatar_for user, size: 50 %>-->
+<%if user.profilepic.url.include? "default"%>
+<%= link_to image_tag("default.jpg", alt: "Profile Picture", :class => "style_image_micropost") %>
+   <%else%>
+<%= image_tag user.profilepic.url, :class => "style_image_micropost" %>
+<% end %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

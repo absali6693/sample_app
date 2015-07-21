@@ -68,7 +68,7 @@ def destroy
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation,:profilepic)
     end
 
     def logged_in_user

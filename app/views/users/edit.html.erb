@@ -1,6 +1,20 @@
 <% provide(:title, "Edit user") %>
 <h1>Update your profile</h1>
 
+<div class="rowprofile">
+<%= form_for(@user, html: { multipart: true }) do |f1| %>
+    <%if @user.profilepic.url.include? "default"%>
+<%= link_to image_tag("default.jpg", alt: "Profile Picture", :class => "style_image") %>
+   <%else%>
+<%= image_tag @user.profilepic.url, :class => "style_image" %>
+<% end %>
+<span class="picture">
+    <%= f1.file_field :profilepic %>
+  </span>
+  <%= f1.submit "Save", class: "btn btn-primary" %>
+<% end %>
+</div>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
@@ -17,13 +31,15 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-
+ 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
-    <div class="gravatar_edit">
+   <!-- <div class="gravatar_edit">
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails">change</a>
-    </div>
+    </div>-->
+    
+
   </div>
 </div>
