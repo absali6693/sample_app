@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'fog-google'
 
 require 'net/smtp'
 Net.instance_eval {remove_const :SMTPSession} if defined?(Net::SMTPSession)

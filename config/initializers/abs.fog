@@ -1,0 +1,4 @@
+my_credential:     
+ google_project: microblogging
+    google_client_email: 1045254101202-p3cifusfjq0gtr19vlpqescilrkgd6uh@developer.gserviceaccount.com
+    google_json_key_location: microblogging-7458e611b648.json

@@ -4,9 +4,9 @@ class ProfilepicUploader < CarrierWave::Uploader::Base
  include CarrierWave::MiniMagick
   process resize_to_limit: [400, 400]
 
-    
-    storage :fog
-  
+ 
+    storage :file
+
 
 
   # Include RMagick or MiniMagick support:
